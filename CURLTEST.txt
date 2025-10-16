@@ -1,0 +1,98 @@
+AuthController:
+register:
+curl -X POST http://127.0.0.1:8000/api/register \
+     -H "Content-Type: application/json" \
+     -d '{"name":"123123asd", "email":"zxcxx23@gmail.com", "password":"12345678", "password_confirmation":"12345678"}'
+
+login:
+curl -X POST "http://localhost:8000/api/login" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "email": "zxcxx23@gmail.com",
+    "password": "12345678"
+  }'
+
+profile:
+curl -X GET "http://localhost:8000/api/profile" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Nzk0LCJleHAiOjE3NjAzNTkzOTQsIm5iZiI6MTc2MDM1NTc5NCwianRpIjoibkZQMzhvM0ZIb1g4d2hidSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.kvlm_BXlR_MuZGkWus1nMHxOfQdDhWN6z5TG6YskAaI" \
+    -H "Accept: application/json" \
+
+
+ClaimController:
+index:
+curl -X GET "http://localhost:8000/api/claim" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzUzMDYyLCJleHAiOjE3NjAzNTY2NjIsIm5iZiI6MTc2MDM1MzA2MiwianRpIjoibUN1YmZpSUFHRDVoN3RCOSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bLHI358Lwy4btC7PtV85_f0PDKNrXmM7Oi4jHzgYoNc" \
+    -H "Accept: application/json" \
+
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/create" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzUzMDYyLCJleHAiOjE3NjAzNTY2NjIsIm5iZiI6MTc2MDM1MzA2MiwianRpIjoibUN1YmZpSUFHRDVoN3RCOSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bLHI358Lwy4btC7PtV85_f0PDKNrXmM7Oi4jHzgYoNc" \
+    -H "Accept: application/json" \
+    -d '{
+      "title": "usee codexxxxxxxxxxx!!"
+    }'
+
+update:
+curl -X PUT "http://127.0.0.1:8000/api/claim/3/update" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYwMzU0Mjk0LCJleHAiOjE3NjAzNTc4OTQsIm5iZiI6MTc2MDM1NDI5NCwianRpIjoidjlUdHRVMDUyR0dGS0oyNiIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mq5pylWmkfHDcND5oxjdbAN6w2c5nh_987YXqlXLDfg" \
+    -H "Accept: application/json" \
+    -d '{
+      "title": "asdasd asdasd!!"
+    }'
+
+destroy:
+curl -X DELETE "http://localhost:8000/api/claim/3/delete" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzUzMDYyLCJleHAiOjE3NjAzNTY2NjIsIm5iZiI6MTc2MDM1MzA2MiwianRpIjoibUN1YmZpSUFHRDVoN3RCOSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bLHI358Lwy4btC7PtV85_f0PDKNrXmM7Oi4jHzgYoNc" \
+    -H "Accept: application/json" \
+
+
+ChallenegeController:
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/challenge/4" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYwMzU0Mjk0LCJleHAiOjE3NjAzNTc4OTQsIm5iZiI6MTc2MDM1NDI5NCwianRpIjoidjlUdHRVMDUyR0dGS0oyNiIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mq5pylWmkfHDcND5oxjdbAN6w2c5nh_987YXqlXLDfg" \
+    -H "Accept: application/json" \
+    -d '{
+      "user_two_id": 2
+    }'
+
+accept:
+curl -X POST "http://localhost:8000/api/claim/challenge/12/accept" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU0NjU1LCJleHAiOjE3NjAzNTgyNTUsIm5iZiI6MTc2MDM1NDY1NSwianRpIjoiMHdDZEdUcE96aGs1UjM1TyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Y8g9y-OT3FSvKncEnB8XvDmlLtebEr2_TtqfWiw7HHs" \
+    -H "Accept: application/json" \
+
+reject:
+curl -X POST "http://localhost:8000/api/claim/challenge/13/reject" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU0NjU1LCJleHAiOjE3NjAzNTgyNTUsIm5iZiI6MTc2MDM1NDY1NSwianRpIjoiMHdDZEdUcE96aGs1UjM1TyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Y8g9y-OT3FSvKncEnB8XvDmlLtebEr2_TtqfWiw7HHs" \
+    -H "Accept: application/json" \
+
+
+ClaimReactionController:
+index:
+curl -X GET "http://localhost:8000/api/claim/reaction" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/4/reaction" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+    -d '{
+      "emoji": "💋"
+    }'
+
+destroy:
+curl -X DELETE "http://localhost:8000/api/claim/reaction/2/delete" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+
+
+NotifController:
+index:
+curl -X GET "http://localhost:8000/api/claim/notifcations" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
