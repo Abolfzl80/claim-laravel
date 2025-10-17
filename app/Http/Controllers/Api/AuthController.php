@@ -11,6 +11,7 @@ use App\Http\Requests\RegisterRequest;
 use App\Http\Requests\LoginRequest;
 use Illuminate\Support\Facades\Auth;
 use Tymon\JWTAuth\Facades\JWTAuth;
+use App\Http\Resources\profileResource;
 
 class AuthController extends Controller
 {
@@ -18,6 +19,7 @@ class AuthController extends Controller
     {
         $request->validated();
         $user = User::create([
+            'username' => $request->username,
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
@@ -55,7 +57,8 @@ class AuthController extends Controller
         try{
             $u = $request->user();
             $user = User::findOrFail($u->id);
-            return response()->json(['you:' => $user]);
+            return new profileResource($user);
+            #return response()->json(['you:' => $user]);
         }catch(\Exception $e){
             return response()->json(['Error' => '404 Not Found!']);
         }

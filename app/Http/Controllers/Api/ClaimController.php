@@ -12,6 +12,7 @@ use App\Http\Requests\ClaimRequest;
 use App\Http\Requests\UpdateClaimR;
 use App\Policies\ClaimPolicy;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Cache;
 
 class ClaimController extends Controller
 {
@@ -22,11 +23,20 @@ class ClaimController extends Controller
     public function index(Request $request)
     {
         $claims = Claim::query();
+
         if($request->has('title')){
             $claims->where('title', 'like', '%' . $request->title . '%');
         }
-        $claims = $claims->latest()->paginate(10);
-        return ClaimResource::collection($claims);
+        $key = $request->has('title') ? 'search_claims_' . md5($request->title) : 'all_claims' ;
+
+        $c = Cache::remember($key, 60 , function () use ($claims) {
+
+            $claim = $claims->latest()->paginate(10);
+            return ClaimResource::collection($claim);
+
+        });
+
+        return ClaimResource::collection($c);
     }    
     
     /**
@@ -47,6 +57,7 @@ class ClaimController extends Controller
             'file_path' => $file_path,
             'user_id' => auth()->id(),
         ]);
+        Cache::flush();
         return new ClaimResource($claim);
     }
 
@@ -59,6 +70,7 @@ class ClaimController extends Controller
             $claim = Claim::findOrFail($id);
             $this->authorize('self', $claim);
             $claim->update($request->validated());
+            Cache::flush();
             return new ClaimResource($claim);
         }catch(\Exception $e){
             return response()->json(['Error' => '404 Not Found!']);
@@ -78,6 +90,7 @@ class ClaimController extends Controller
             }
     
             $claim->delete();
+            Cache::flush();
             return response()->json(['message' => 'Claim Deleted Successfully!']);
         }catch(\Exception $e){
             return response()->json(['Error' => '404 Not Found!']);
