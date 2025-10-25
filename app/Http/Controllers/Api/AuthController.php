@@ -63,4 +63,22 @@ class AuthController extends Controller
             return response()->json(['Error' => '404 Not Found!']);
         }
     }
+
+    public function editINFO(Request $request)
+    {
+        try{
+            $e = $request->validate([
+                'username' => 'nullable|string',
+                'name' => 'required|string',
+                'password' => 'required|string|min:6|confirmed',
+                'avatar' => 'nullable|image|mime:png,jpeg,jpg,gif'
+            ]);
+            $user = $request->user();
+            $u = User::findOrFail($user->id);
+            $u->update($e);
+            return response()->json(['message' => 'Updated information Successfully!!']);
+        }catch(\Exception $e){
+            return response()->json(['Error' => "$e"]);
+        }
+    }
 }

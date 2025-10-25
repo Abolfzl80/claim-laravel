@@ -7,10 +7,10 @@ use App\Http\Controllers\Api\ClaimReactionController;
 use App\Http\Controllers\Api\ChallenegeController;
 use App\Http\Controllers\Api\NotifController;
 
-Route::post('/register', [AuthController::class, 'register']);
-Route::post('/login', [AuthController::class, 'login']);
+Route::middleware('throttle:20,1')->post('/register', [AuthController::class, 'register']);
+Route::middleware('throttle:20,1')->post('/login', [AuthController::class, 'login']);
 
-Route::middleware('auth:api')->group( function () {
+Route::middleware('auth:api', 'throttle:30,1')->group( function () {
     Route::get('/profile', [AuthController::class, 'profile']);
 
     Route::get('/claim', [ClaimController::class, 'index']);

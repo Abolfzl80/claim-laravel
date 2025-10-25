@@ -10,7 +10,11 @@ Reaction (ایموجی) به هر Claim,
 ارسال چالش به کاربران دیگر و قابلیت قبول یا رد چالش,
 حذف Reaction‌ها
 استفاده از Request class‌ها، Resource‌ها، Policy، Notification‌ها,
+پروفایل و کش claims with redis,
 احراز هویت با JWT.
+simple test,
+Ratelimiting for routes,
+avatar for users profile.
 
 ##  راه‌اندازی سریع
 
