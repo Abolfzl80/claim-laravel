@@ -27,15 +27,13 @@ class ClaimController extends Controller
         if($request->has('title')){
             $claims->where('title', 'like', '%' . $request->title . '%');
         }
-        $key = $request->has('title') ? 'search_claims_' . md5($request->title) : 'all_claims' ;
+        $key = $request->has('title') ? 'search_claims_' . md5($request->title) : 'all_claims';
 
-        $c = Cache::remember($key, 60 , function () use ($claims) {
-
-            $claim = $claims->latest()->paginate(10);
-            return ClaimResource::collection($claim);
-
+        $c = Cache::remember($key, 60 , function () use ($claims){
+            return ClaimResource::collection($claims);
         });
 
+        $c = $claims->latest()->paginate(10);
         return ClaimResource::collection($c);
     }    
     

@@ -12,9 +12,10 @@ Reaction (ایموجی) به هر Claim,
 استفاده از Request class‌ها، Resource‌ها، Policy، Notification‌ها,
 پروفایل و کش claims with redis,
 احراز هویت با JWT.
-simple test,
+simple test Feature and CURL,
 Ratelimiting for routes,
 avatar for users profile.
+save claim.
 
 ##  راه‌اندازی سریع
 
@@ -39,8 +40,11 @@ app/
 ├── Models/
 ├── Notifications/
 ├── Policies/
-├──database/
-├──routes/
+├── database/
+│   └── factories/
+│   └── migrations/
+├── routes/
+├── tests/
 
 ##  لایسنس
 

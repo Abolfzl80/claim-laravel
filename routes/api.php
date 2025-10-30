@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\ClaimController;
 use App\Http\Controllers\Api\ClaimReactionController;
 use App\Http\Controllers\Api\ChallenegeController;
 use App\Http\Controllers\Api\NotifController;
+use App\Http\Controllers\Api\SaveController;
 
 Route::middleware('throttle:20,1')->post('/register', [AuthController::class, 'register']);
 Route::middleware('throttle:20,1')->post('/login', [AuthController::class, 'login']);
@@ -27,4 +28,9 @@ Route::middleware('auth:api', 'throttle:30,1')->group( function () {
     Route::post('/claim/challenge/{id}/reject', [ChallenegeController::class, 'reject']);
 
     Route::get('/claim/notifcations', [NotifController::class, 'index']);
+
+    Route::get('/claims/save', [SaveController::class, 'index']);
+    Route::post('/claim/save/{id}', [SaveController::class, 'store']);
+    Route::get('/save/claim/{id}/show', [SaveController::class, 'show']);
+    Route::delete('/save/claim/{id}/delete', [SaveController::class, 'destroy']);
 });

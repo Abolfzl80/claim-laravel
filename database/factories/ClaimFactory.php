@@ -18,8 +18,8 @@ class ClaimFactory extends Factory
     {
         return [
             'title' => fake()->name(),
-            'description' => fake()->paragraf(),
-            'user_id' => fake()->integer(),
+            'description' => fake()->sentence(),
+            'user_id' => \App\Models\User::factory(),
         ];
     }
 }
