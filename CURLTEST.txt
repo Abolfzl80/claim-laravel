@@ -1,0 +1,138 @@
+AuthController:
+register:
+curl -X POST http://127.0.0.1:8000/api/register \
+     -H "Content-Type: application/json" \
+     -d '{"username":"123123ase3wwd", "name":"1231sd", "email":"zxcxx23@gmail.com", "password":"12345678", "password_confirmation":"12345678"}'
+
+login:
+curl -X POST "http://localhost:8000/api/login" \
+  -H "Content-Type: application/json" \
+  -H "Accept: application/json" \
+  -d '{
+    "email": "zxcxx23@gmail.com",
+    "password": "12345678"
+  }'
+
+profile:
+curl -X GET "http://localhost:8000/api/profile" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYzMzAxNzg2LCJleHAiOjE3NjMzMDUzODYsIm5iZiI6MTc2MzMwMTc4NiwianRpIjoiZUg1VXFHVzBQeDJZQVpYYSIsInN1YiI6IjYiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.3Emupkej7dZXthXhNzqbc5s96KSRMuYNwtFjJOs-ZDY" \
+    -H "Accept: application/json" \
+
+editProfile:
+curl -X PUT "http://127.0.0.1:8000/api/profile/editINFO" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYzMzA0MDg3LCJleHAiOjE3NjMzMDc2ODcsIm5iZiI6MTc2MzMwNDA4NywianRpIjoienBGd2xxbklsVlhlYlNhaCIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.fndUOQLq7VqBTkJX_pcvsEVjiz62sppZHbzlEUVUIz4" \
+    -H "Accept: application/json" \
+    -d '{
+      "username": "vcxcbvvx!!",
+      "name": "erwr"
+    }'
+
+
+ClaimController:
+index:
+curl -X GET "http://localhost:8000/api/claim" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwNzI0NzIzLCJleHAiOjE3NjA3MjgzMjMsIm5iZiI6MTc2MDcyNDcyMywianRpIjoiT1RPeTBSSW1aamdFRFJRZCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.o_IyvK-8_wKdO1bBgEViLQvgQ4CJsVUM-Jt5QEfm7y0" \
+    -H "Accept: application/json" \
+
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/create" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwNzI0NzIzLCJleHAiOjE3NjA3MjgzMjMsIm5iZiI6MTc2MDcyNDcyMywianRpIjoiT1RPeTBSSW1aamdFRFJRZCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.o_IyvK-8_wKdO1bBgEViLQvgQ4CJsVUM-Jt5QEfm7y0" \
+    -H "Accept: application/json" \
+    -d '{
+      "title": "ussxxxxxxx!!"
+    }'
+
+update:
+curl -X PUT "http://127.0.0.1:8000/api/claim/3/update" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYwMzU0Mjk0LCJleHAiOjE3NjAzNTc4OTQsIm5iZiI6MTc2MDM1NDI5NCwianRpIjoidjlUdHRVMDUyR0dGS0oyNiIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mq5pylWmkfHDcND5oxjdbAN6w2c5nh_987YXqlXLDfg" \
+    -H "Accept: application/json" \
+    -d '{
+      "title": "asdasd asdasd!!"
+    }'
+
+destroy:
+curl -X DELETE "http://localhost:8000/api/claim/3/delete" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzUzMDYyLCJleHAiOjE3NjAzNTY2NjIsIm5iZiI6MTc2MDM1MzA2MiwianRpIjoibUN1YmZpSUFHRDVoN3RCOSIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.bLHI358Lwy4btC7PtV85_f0PDKNrXmM7Oi4jHzgYoNc" \
+    -H "Accept: application/json" \
+
+
+ChallenegeController:
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/challenge/4" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vMTI3LjAuMC4xOjgwMDAvYXBpL3JlZ2lzdGVyIiwiaWF0IjoxNzYwMzU0Mjk0LCJleHAiOjE3NjAzNTc4OTQsIm5iZiI6MTc2MDM1NDI5NCwianRpIjoidjlUdHRVMDUyR0dGS0oyNiIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.mq5pylWmkfHDcND5oxjdbAN6w2c5nh_987YXqlXLDfg" \
+    -H "Accept: application/json" \
+    -d '{
+      "user_two_id": 2
+    }'
+
+accept:
+curl -X POST "http://localhost:8000/api/claim/challenge/12/accept" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU0NjU1LCJleHAiOjE3NjAzNTgyNTUsIm5iZiI6MTc2MDM1NDY1NSwianRpIjoiMHdDZEdUcE96aGs1UjM1TyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Y8g9y-OT3FSvKncEnB8XvDmlLtebEr2_TtqfWiw7HHs" \
+    -H "Accept: application/json" \
+
+reject:
+curl -X POST "http://localhost:8000/api/claim/challenge/13/reject" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU0NjU1LCJleHAiOjE3NjAzNTgyNTUsIm5iZiI6MTc2MDM1NDY1NSwianRpIjoiMHdDZEdUcE96aGs1UjM1TyIsInN1YiI6IjIiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Y8g9y-OT3FSvKncEnB8XvDmlLtebEr2_TtqfWiw7HHs" \
+    -H "Accept: application/json" \
+
+
+ClaimReactionController:
+index:
+curl -X GET "http://localhost:8000/api/claim/reaction" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/4/reaction" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+    -d '{
+      "emoji": "💋"
+    }'
+
+destroy:
+curl -X DELETE "http://localhost:8000/api/claim/reaction/2/delete" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Accept: application/json" \
+
+
+NotifController:
+index:
+curl -X GET "http://localhost:8000/api/claim/notifcations" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYxODIzODM0LCJleHAiOjE3NjE4Mjc0MzQsIm5iZiI6MTc2MTgyMzgzNCwianRpIjoibU1ENUV2QjE3cFVRYU1GZyIsInN1YiI6IjEiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.nle2TaG1Sfw1M2dtVZZ2mCMZHR_h6YVU8Tfoyla2ZLY" \
+    -H "Accept: application/json" \
+
+
+
+
+
+SaveController:
+index:
+curl -X GET "http://localhost:8000/api/claims/save" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYxODIzOTAxLCJleHAiOjE3NjE4Mjc1MDEsIm5iZiI6MTc2MTgyMzkwMSwianRpIjoiVXFaSkNkRGg2WlhBeUU4VSIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5T1oXdv05nU4D6cFZ01YfoGDY7aDNFq9E_H4GLmiIhk" \
+    -H "Accept: application/json" \
+
+store:
+curl -X POST "http://127.0.0.1:8000/api/claim/save/6" \
+    -H "Content-Type: application/json" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYxODIxMTMzLCJleHAiOjE3NjE4MjQ3MzMsIm5iZiI6MTc2MTgyMTEzMywianRpIjoiYnl4T2hDSWJNOTREZXJNZyIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.kMVPXmxr9mUxDmkGw-aO6eEzlYXidA36PpOUPeBD4cc" \
+    -H "Accept: application/json" \
+
+
+show:
+curl -X GET "http://localhost:8000/api/save/claim/2/show" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYxODIzOTAxLCJleHAiOjE3NjE4Mjc1MDEsIm5iZiI6MTc2MTgyMzkwMSwianRpIjoiVXFaSkNkRGg2WlhBeUU4VSIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.5T1oXdv05nU4D6cFZ01YfoGDY7aDNFq9E_H4GLmiIhk" \
+    -H "Accept: application/json" 
+
+
+destroy:
+curl -X DELETE "http://localhost:8000/api/save/claim/2/delete" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYxODIxMTMzLCJleHAiOjE3NjE4MjQ3MzMsIm5iZiI6MTc2MTgyMTEzMywianRpIjoiYnl4T2hDSWJNOTREZXJNZyIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.kMVPXmxr9mUxDmkGw-aO6eEzlYXidA36PpOUPeBD4cc" \
+    -H "Accept: application/json" \
+
+
