@@ -9,6 +9,7 @@ use App\Models\Claim;
 use App\Http\Requests\ReactionRequest;
 use App\Http\Resources\ReactionResource;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use App\Jobs\sendReactionNot;
 
 class ClaimReactionController extends Controller
 {
@@ -31,7 +32,7 @@ class ClaimReactionController extends Controller
     
         $existing = Reaction::where('claim_id', $request->claim_id)->where('user_id', $user->id)->where('emoji', $request->emoji)->first();
         if($existing){
-            return response()->json(['message' => 'You already reacted with this emoji'], 409);
+            return response()->json(['message' => 'You already reacted with this emoji']);
         }
     
         $reaction = Reaction::create([
@@ -39,6 +40,7 @@ class ClaimReactionController extends Controller
             'user_id' => auth()->id(),
             'emoji' => $request->emoji,
         ]);
+        dispatch(new sendReactionNot($reaction->id))->onQueue('high');
         return new ReactionResource($reaction);
     }
     

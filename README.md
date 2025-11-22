@@ -17,6 +17,7 @@ Ratelimiting for routes,
 avatar for users profile.
 save claim.
 simple and swagger api doc for test just AuthController.
+send reaction notif with Queue for owner claim with onQueue('high') in controller and job:)
 and some more featrue...
 
 ##  راه‌اندازی سریع

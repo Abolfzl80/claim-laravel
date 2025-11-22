@@ -38,10 +38,10 @@ curl -X GET "http://localhost:8000/api/claim" \
 store:
 curl -X POST "http://127.0.0.1:8000/api/claim/create" \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwNzI0NzIzLCJleHAiOjE3NjA3MjgzMjMsIm5iZiI6MTc2MDcyNDcyMywianRpIjoiT1RPeTBSSW1aamdFRFJRZCIsInN1YiI6IjMiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.o_IyvK-8_wKdO1bBgEViLQvgQ4CJsVUM-Jt5QEfm7y0" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYzODM2ODQxLCJleHAiOjE3NjM4NDA0NDEsIm5iZiI6MTc2MzgzNjg0MSwianRpIjoieFNhOTNDVEZTWEMwUWRldiIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.8_YEF9sw1mEysiUocaz2k9gJZndlHrJoshw1d9FVnQ0" \
     -H "Accept: application/json" \
     -d '{
-      "title": "ussxxxxxxx!!"
+      "title": "im gay!!"
     }'
 
 update:
@@ -87,9 +87,9 @@ curl -X GET "http://localhost:8000/api/claim/reaction" \
     -H "Accept: application/json" \
 
 store:
-curl -X POST "http://127.0.0.1:8000/api/claim/4/reaction" \
+curl -X POST "http://127.0.0.1:8000/api/claim/1/reaction" \
     -H "Content-Type: application/json" \
-    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYwMzU1Mjk1LCJleHAiOjE3NjAzNTg4OTUsIm5iZiI6MTc2MDM1NTI5NSwianRpIjoiVFVXTTg2OXBsUVJvNGRGZSIsInN1YiI6IjQiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.Emo1WnP8_5bhctqK3gTVZMQxzf1n6bMr3EvjjhsbD4I" \
+    -H "Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL2xvZ2luIiwiaWF0IjoxNzYzODQxMDEyLCJleHAiOjE3NjM4NDQ2MTIsIm5iZiI6MTc2Mzg0MTAxMiwianRpIjoicWMxbmxhWTRZQmlUam0xWSIsInN1YiI6IjUiLCJwcnYiOiIyM2JkNWM4OTQ5ZjYwMGFkYjM5ZTcwMWM0MDA4NzJkYjdhNTk3NmY3In0.1PnEHy5T01ZHjK0RsCLrJzrgLYYEKgo3RJlcScEg_rI" \
     -H "Accept: application/json" \
     -d '{
       "emoji": "💋"
