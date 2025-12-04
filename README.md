@@ -23,31 +23,35 @@ and some more featrue...
 ##  راه‌اندازی سریع
 
 bash:
-git clone https://github.com/Abolfzl80/laravel-Claim-App-Beckend.git
-composer install
-php artisan migrate
-php artisan serve
-test = CURLTEST.txt 
+    git clone https://github.com/Abolfzl80/laravel-Claim-App-Beckend.git
+
+    composer install
+
+    php artisan migrate
+
+    php artisan serve
+
+    test = CURLTEST.txt 
 
 ##  احراز هویت با توکن
 
-Authorization: Bearer YOUR_TOKEN_HERE
+    Authorization: Bearer YOUR_TOKEN_HERE
 
 ##  ساختار پروژه
 
-app/
-├── Http/
-│   └── Controllers/
-│   └── Requests/
-│   └── Resources/
-├── Models/
-├── Notifications/
-├── Policies/
-├── database/
-│   └── factories/
-│   └── migrations/
-├── routes/
-├── tests/
+    app/
+    ├── Http/
+    │   └── Controllers/
+    │   └── Requests/
+    │   └── Resources/
+    ├── Models/
+    ├── Notifications/
+    ├── Policies/
+    ├── database/
+    │   └── factories/
+    │   └── migrations/
+    ├── routes/
+    ├── tests/
 
 ##  لایسنس
 
